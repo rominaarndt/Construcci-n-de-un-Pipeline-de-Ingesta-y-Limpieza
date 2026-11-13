@@ -1,0 +1,11 @@
+type nul > .gitignore
+.gitignore — PEGAR EN .gitignore
+venv/
+__pycache__/
+*.pyc
+
+data/raw/*.csv
+data/processed/*.parquet
+git status
+
+
