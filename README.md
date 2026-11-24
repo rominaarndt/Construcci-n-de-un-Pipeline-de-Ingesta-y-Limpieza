@@ -74,7 +74,7 @@ Cómo ejecutar el pipeline
 1-Clonar el repositorio y entrar en la carpeta del proyecto:
 
 Bash
-git clone <URL_DEL_REPOSITORIO>
+git clone <[https://github.com/rominaarndt/Construcci-n-de-un-Pipeline-de-Ingesta-y-Limpieza.git](https://github.com/rominaarndt/Construcci-n-de-un-Pipeline-de-Ingesta-y-Limpieza.git)>
 cd Construcci-n-de-un-Pipeline-de-Ingesta-y-Limpieza
 
 2-Crear y activar un entorno virtual (recomendado) e instalar dependencias:
