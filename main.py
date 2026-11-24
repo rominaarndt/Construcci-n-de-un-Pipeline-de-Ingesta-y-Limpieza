@@ -1,32 +1,18 @@
 from src.extract import extract_data
-from src.transform import transform_data
-from src.load import load_data
-
-
-# Rutas
-RUTA_CSV_ORIGEN = "data/raw/dataset.csv"
-RUTA_PARQUET_DESTINO = "data/processed/dataset_procesado.parquet"
+from src.transform import clean_data
+from src.load import save_to_parquet
 
 
 def main():
+    raw_path = "data/raw/dataset.csv"  # Ruta a tu CSV
+    output_path = "data/processed/dataset_procesado.parquet"
 
-    print("🚀 Iniciando pipeline ETL...\n")
+    df = extract_data(raw_path)
+    df_clean = clean_data(df)
+    save_to_parquet(df_clean, output_path)
 
-    # 1. Extracción
-    print("📥 Etapa 1: Extracción")
-    df = extract_data(RUTA_CSV_ORIGEN)
-
-    # 2. Transformación
-    print("\n🧹 Etapa 2: Transformación")
-    df_transformado = transform_data(df)
-
-    # 3. Carga
-    print("\n💾 Etapa 3: Carga")
-    load_data(df_transformado, RUTA_PARQUET_DESTINO)
-
-    print("\n🎉 Pipeline ejecutado con éxito.")
+    print("Pipeline ejecutado correctamente.")
 
 
 if __name__ == "__main__":
     main()
-    
